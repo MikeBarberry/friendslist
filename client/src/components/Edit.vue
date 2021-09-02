@@ -38,7 +38,7 @@ import "ant-design-vue/lib/message/style/css"
             fetchFriend() {
                 const request = { id: this.id }
                 axios
-                    .post('http://localhost:40320/api/friends/friend-info', request)
+                    .post('http://localhost:3001/api/friends/friend-info', request)
                     .then((response) => {
                         const res = response.data[0]
                         this.name = res.name
@@ -57,7 +57,7 @@ import "ant-design-vue/lib/message/style/css"
                     food: this.food,
                 }
                 axios
-                    .post('http://localhost:40320/api/friends/edit', request)
+                    .post('http://localhost:3001/api/friends/edit', request)
                     .then(() => {
                         message.success('Edit successful');
                         setTimeout(() => {
