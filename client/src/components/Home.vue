@@ -62,9 +62,6 @@ export default {
 
 <style>
     body {
-        left: 10px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: navy;
         background-image: url(../assets/coast.jpg);
     }
 
