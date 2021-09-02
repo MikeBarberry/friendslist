@@ -50,7 +50,7 @@ export default {
     },
     methods: {
         goBack() {
-            this.$router.push('/home')
+            this.$router.push('/')
         },
         fetchData() {
             axios

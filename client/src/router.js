@@ -6,12 +6,7 @@ export default [
   // Redirects to /route-one as the default route.
   {
     path: '/',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
     component: Home,
-    
   },
   {
     path: '/list',
