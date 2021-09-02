@@ -43,7 +43,7 @@ export default {
               food: this.food,
           }
           axios
-                .post('http://localhost:3001/api/friends/new', request)
+                .post('http://localhost:40320/api/friends/new', request)
                 .then(() => {
                     this.name = '',
                     this.activity = '',
