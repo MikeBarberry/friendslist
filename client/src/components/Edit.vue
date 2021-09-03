@@ -57,7 +57,7 @@ import "ant-design-vue/lib/message/style/css"
                     food: this.food,
                 }
                 axios
-                    .post('api/friends/edit', request)
+                    .post('/api/friends/edit', request)
                     .then(() => {
                         message.success('Edit successful');
                         setTimeout(() => {

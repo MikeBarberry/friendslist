@@ -34,7 +34,7 @@ app.get("/ping", (req, res) => {
 
 app.use("/api/friends", friends)
 
-const port = process.env.PORT || 40320
+const port = process.env.PORT || 3001
 app.listen(port, () => {
     console.log(`Friends List server running on PORT: ${port}`)
 })
