@@ -21,7 +21,7 @@ mongoose
 
 app.use(cors())
 app.use(express.json());
-app.use(express.urlencoded({ extended: true, limit: "100mb", }));
+// app.use(express.urlencoded({ extended: true, limit: "100mb", }));
 
 app.use("/api/friends", friends)
 
