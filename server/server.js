@@ -6,23 +6,23 @@ const path = require('path')
 const cors = require("cors")
 const mongoose = require("mongoose")
 
-const friends = require("./routes/api/friends")
 const app = express()
-const db = process.env.MONGO_URI
-
-mongoose
-    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((database) => {
-        console.log("Successfully connected to: " + database.connections[0].host)
-    })
-    .catch((err) => {
-        console.log("Error connecting to database: " + err)
-    })
-
 app.use(cors())
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true, limit: "100mb", }));
+app.use(express.urlencoded({ extended: true, limit: "100mb", }));
 
+
+const db = process.env.MONGO_URI
+mongoose
+.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+.then((database) => {
+    console.log("Successfully connected to: " + database.connections[0].host)
+})
+.catch((err) => {
+    console.log("Error connecting to database: " + err)
+})
+
+const friends = require("./routes/api/friends")
 app.use("/api/friends", friends)
 
 if (process.env.NODE_ENV === 'production') {
