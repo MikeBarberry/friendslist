@@ -54,7 +54,7 @@ export default {
         },
         fetchData() {
             axios
-                .get('http://localhost:3001/api/friends/index')
+                .get('/api/friends/index')
                 .then((res) => {
                     this.friends = res.data
                 })
@@ -70,7 +70,7 @@ export default {
                 title: 'Are you sure you want to delete?',
                 onOk() {
                     axios
-                        .post('http://localhost:3001/api/friends/delete', { id: friend_id })
+                        .post('/api/friends/delete', { id: friend_id })
                         .then(() => {
                             refreshData()
                         })
