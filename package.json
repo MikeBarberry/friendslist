@@ -14,7 +14,7 @@
     "server": "nodemon ./server/server.js",
     "client": "npm run serve --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "npm install --prefix server && npm start --prefix server"  
+    "start": "npm install --prefix server && npm start --prefix server"
   },
   "author": "mike barberry",
   "license": "ISC",

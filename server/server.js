@@ -23,16 +23,24 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "100mb", }));
 
-app.use(express.static(path.join(__dirname, "../client/dist")))
+/* app.use(express.static(path.join(__dirname, "../client/dist")))
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist", "index.html"))
-})
+}) */
 
 app.get("/ping", (req, res) => {
   return res.send("pong")
 })
 
 app.use("/api/friends", friends)
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(__dirname + '/public/'))
+    app.get('/.*/', (req, res) => {
+        res.sendFile(__dirname + '/public/index.html')
+    })
+}
+
 
 const port = process.env.PORT || 3001
 app.listen(port, () => {
