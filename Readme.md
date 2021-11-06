@@ -1,2 +1,4 @@
 # Friends List
-Built after I learned about html forms and Sqlite3. Originally written in PHP, rewritten in Vue and Express
+Builth with PHP & HTML; rewritten in Vue and Express. Simple web application to save data about friends 
+
+(Client directory is pre-built and stored in server > public > js to be deployed on Heroku)
