@@ -14,7 +14,6 @@ router.get('/index', (req, res) => {
 });
 
 router.post('/new', (req, res) => {
-  // console.log(req)
   const friend = new Friend({
     name: req.body.name,
     activity: req.body.activity,
